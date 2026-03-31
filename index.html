@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outfit AI</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>👕 Outfit AI</header>
+
+<div class="container">
+
+  <div class="upload-section">
+    <div class="card">
+      <p>Upload Tops</p>
+      <input type="file" id="tops" multiple accept="image/*">
+    </div>
+
+    <div class="card">
+      <p>Upload Bottoms</p>
+      <input type="file" id="bottoms" multiple accept="image/*">
+    </div>
+
+    <div class="card">
+      <p>Upload Shoes</p>
+      <input type="file" id="shoes" multiple accept="image/*">
+    </div>
+  </div>
+
+  <button onclick="generateOutfit()">Generate Outfit ✨</button>
+
+  <h2>Your Wardrobe</h2>
+  <div class="gallery" id="wardrobe"></div>
+
+  <h2>Suggested Outfit</h2>
+  <div class="gallery outfit" id="outfit"></div>
+
+</div>
+
+<!-- 🤖 AI Assistant -->
+<div class="ai-box">
+  <div id="chat"></div>
+  <input type="text" id="userInput" placeholder="Ask AI..." />
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

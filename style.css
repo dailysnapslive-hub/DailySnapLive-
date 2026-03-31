@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🔥 Page Animation */
+body {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: pageEnter 0.8s ease forwards;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: white;
+}
+
+@keyframes pageEnter {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Layout */
+header {
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.upload-section {
+  display: grid;
+  gap: 20px;
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardEnter 0.6s ease forwards;
+}
+
+.card:nth-child(1){animation-delay:0.2s;}
+.card:nth-child(2){animation-delay:0.4s;}
+.card:nth-child(3){animation-delay:0.6s;}
+
+@keyframes cardEnter {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(45deg, #6a5cff, #00d4ff);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.outfit img {
+  height: 150px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .gallery { grid-template-columns: repeat(2,1fr); }
+  .outfit { grid-template-columns: repeat(1,1fr); }
+}
+
+/* PC */
+@media (min-width: 768px) {
+  .upload-section { grid-template-columns: repeat(3,1fr); }
+  .gallery { grid-template-columns: repeat(5,1fr); }
+  .outfit { grid-template-columns: repeat(3,1fr); }
+}
+
+/* AI Chat */
+.ai-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+#chat {
+  height: 150px;
+  overflow-y: auto;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#chat p { margin: 5px 0; }
+
+#userInput {
+  width: 70%;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+
+.ai-box button {
+  width: 28%;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
