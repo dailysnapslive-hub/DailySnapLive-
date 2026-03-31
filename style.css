@@ -1,135 +1,72 @@
+/* 📱 Make everything responsive */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
-/* 🔥 Page Animation */
 body {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: pageEnter 0.8s ease forwards;
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-  color: white;
+  margin: 0;
+  padding: 10px;
 }
 
-@keyframes pageEnter {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Layout */
-header {
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
-  font-weight: 600;
-}
-
+/* 📦 Main container fix */
 .container {
-  padding: 20px;
-  max-width: 1200px;
+  max-width: 500px;
   margin: auto;
+  padding: 10px;
 }
 
-.upload-section {
-  display: grid;
-  gap: 20px;
+/* 📂 Upload boxes fix */
+.upload-box {
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-/* Cards */
-.card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 15px;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: 0.3s;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: cardEnter 0.6s ease forwards;
-}
-
-.card:nth-child(1){animation-delay:0.2s;}
-.card:nth-child(2){animation-delay:0.4s;}
-.card:nth-child(3){animation-delay:0.6s;}
-
-@keyframes cardEnter {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* Button */
+/* 🎯 Button fix */
 button {
   width: 100%;
-  padding: 14px;
-  margin-top: 20px;
-  border: none;
-  border-radius: 14px;
-  background: linear-gradient(45deg, #6a5cff, #00d4ff);
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+  margin-top: 10px;
 }
 
-/* Gallery */
-.gallery {
-  display: grid;
-  gap: 12px;
-  margin-top: 15px;
+/* 🧥 Wardrobe & Outfit */
+#wardrobe, #outfit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
-.gallery img {
-  width: 100%;
-  height: 110px;
+#wardrobe img, #outfit img {
+  width: 80px;
+  height: 80px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
-.outfit img {
-  height: 150px;
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-  .gallery { grid-template-columns: repeat(2,1fr); }
-  .outfit { grid-template-columns: repeat(1,1fr); }
-}
-
-/* PC */
-@media (min-width: 768px) {
-  .upload-section { grid-template-columns: repeat(3,1fr); }
-  .gallery { grid-template-columns: repeat(5,1fr); }
-  .outfit { grid-template-columns: repeat(3,1fr); }
-}
-
-/* AI Chat */
+/* 🤖 AI Box FIX (MAIN PROBLEM) */
 .ai-box {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 400px;
+  z-index: 1000;
+
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
   border-radius: 15px;
   padding: 10px;
-  border: 1px solid rgba(255,255,255,0.1);
 }
 
+/* Chat area */
 #chat {
-  height: 150px;
+  max-height: 120px;
   overflow-y: auto;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 13px;
 }
 
-#chat p { margin: 5px 0; }
-
-#userInput {
+/* Input row */
+.ai-box input {
   width: 70%;
   padding: 8px;
   border-radius: 10px;
@@ -138,7 +75,9 @@ button {
 
 .ai-box button {
   width: 28%;
-  padding: 8px;
-  border-radius: 10px;
-  margin-top: 5px;
 }
+
+/* 📱 EXTRA spacing so content not hidden behind AI box */
+body {
+  padding-bottom: 120px;
+}}
